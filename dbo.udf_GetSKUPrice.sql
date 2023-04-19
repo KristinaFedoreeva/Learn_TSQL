@@ -4,7 +4,7 @@ AS
 BEGIN
     DECLARE @AvgPrice DECIMAL(18, 2);
 
-    SELECT @AvgPrice = SUM(Value) / SUM(Quantity)
+    SELECT @AvgPrice = (SUM(Value) * 1.0) / SUM(Quantity)
     FROM dbo.Basket
     WHERE ID_SKU = @ID_SKU;
 
